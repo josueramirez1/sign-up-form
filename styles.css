@@ -1,0 +1,94 @@
+:root {
+  --gray-color: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+}
+
+.container {
+  background-image: url(img/mountains.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.sign-up {
+  background-color: #fff;
+  flex-direction: column;
+}
+
+form > .account,
+.introduction,
+.form-container {
+  padding: 0 40px;
+}
+
+.form-container {
+  border-top: 1px solid var(--gray-color);
+  border-bottom: 1px solid var(--gray-color);
+  padding: 30px 40px;
+}
+
+form > .account {
+  padding: 30px 40px;
+}
+
+form {
+  flex: 2;
+}
+
+.introduction {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 40px;
+}
+
+.introduction p {
+  font-size: 1.3rem;
+  margin-top: 30px;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 600px) {
+  .sign-up {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .sign-up {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 1201px) {
+  body {
+    background-color: #000;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sign-up {
+    width: 60%;
+  }
+}
