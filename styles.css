@@ -1,11 +1,17 @@
 :root {
   --gray-color: #e5e7eb;
+  --olivedrab: hsl(80, 60%, 35%);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Norse-Bold";
+  src: url("font/Norse-Bold.otf");
 }
 
 body {
@@ -24,7 +30,6 @@ body {
 
 .section {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
 }
@@ -32,6 +37,17 @@ body {
 .sign-up {
   background-color: #fff;
   flex-direction: column;
+  height: 100vh;
+}
+
+.logo {
+  display: flex;
+}
+
+.author {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  color: #fff;
 }
 
 form > .account,
@@ -52,6 +68,7 @@ form > .account {
 
 form {
   flex: 2;
+  margin-bottom: 4rem;
 }
 
 .introduction {
@@ -68,14 +85,149 @@ form {
   font-weight: 300;
 }
 
+.btn {
+  font-family: inherit;
+  font-size: inherit;
+  color: #fff;
+  background-color: var(--olivedrab);
+  border: none;
+  border-radius: 3px;
+  padding: 0.8rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn:hover {
+  background-color: hsl(80, 60%, 25%);
+  cursor: pointer;
+}
+
+.account a:link,
+.account a:visited {
+  color: var(--olivedrab);
+  text-decoration: none;
+}
+
+.account a:hover,
+.account a:active {
+  color: hsl(80, 60%, 25%);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 25px 40px;
+  box-shadow: 0 2px 0 0 var(--gray-color);
+}
+
+.form-container h2 {
+  margin-bottom: 25px;
+}
+
+.form-row {
+  gap: 2rem;
+  width: 100%;
+}
+
+.form-box {
+  display: flex;
+  flex: 1;
+}
+
+.form-row label {
+  width: 100%;
+
+  display: inline-block;
+  margin-bottom: 0.2rem;
+
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 0.7rem;
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"],
+.form-row input[type="email"] {
+  background-color: #ffffff;
+  border: 1px solid var(--gray-color);
+  border-radius: 3px;
+  height: 1.6rem;
+  width: 75%;
+  padding: 0.4rem;
+}
+
+.form-row input[type="text"]:focus,
+.form-row input[type="password"]:focus,
+.form-row input[type="email"]:focus {
+  border: 1px solid blue;
+}
+
+.form-row input[type="text"]:valid,
+.form-row input[type="password"]:valid,
+.form-row input[type="email"]:valid {
+  border: 1px solid green;
+}
+
+.form-row input[type="text"]:invalid,
+.form-row input[type="password"]:invalid,
+.form-row input[type="email"]:invalid {
+  border: 1px solid red;
+}
+
 @media only screen and (max-width: 600px) {
   .sign-up {
     width: 100%;
+  }
+
+  .form-box {
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 0;
+  }
+
+  .author {
+    width: 0;
+  }
+
+  .form-row label {
+    display: inline-block;
+    margin: 0.2rem 0;
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
   .sign-up {
     width: 60%;
+  }
+
+  .form-box {
+    display: block;
+  }
+
+  .form-box label {
+    display: inline-block;
+    margin: 0.2rem 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 8rem;
+    background: rgba(255, 255, 255, 0.6);
+    width: 40%;
+    margin-top: 9.1rem;
+  }
+
+  .logo img {
+    height: 7.5rem;
+  }
+
+  .logo h1 {
+    font-family: "Norse-Bold", sans-serif;
+    color: rgb(124, 105, 90);
+    font-size: 4.5rem;
   }
 }
 @media only screen and (min-width: 1201px) {
@@ -84,11 +236,39 @@ form {
   }
 
   .container {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
   }
 
+  .form-row {
+    display: flex;
+  }
+
   .sign-up {
     width: 60%;
+  }
+
+  .form-box {
+    flex-direction: column;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 9rem;
+    background: rgba(255, 255, 255, 0.6);
+    width: 40%;
+    margin-top: 9.1rem;
+  }
+
+  .logo img {
+    height: 7.5rem;
+  }
+
+  .logo h1 {
+    font-family: "Norse-Bold", sans-serif;
+    color: hsl(26.47, 16%, 42%);
+    font-size: 4.5rem;
   }
 }

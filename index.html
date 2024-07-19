@@ -2,13 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Sign Up Form</title>
   </head>
   <body>
     <div class="container">
-      <div class="logo"></div>
+      <div class="section logo">
+        <img src="img/output-onlinepngtools.png" alt="Odin logo" />
+        <h1>Odin</h1>
+      </div>
 
       <section class="section sign-up">
         <div class="introduction">
@@ -22,29 +28,74 @@
         <form action="" method="GET">
           <div class="form-container">
             <h2>Let's do this!</h2>
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name" name="user_first_name" />
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="user_last_name" />
-            <label for="mail">Email</label>
-            <input type="email" id="mail" name="user_email" />
-            <label for="phone-number">Phone Number</label>
-            <input type="text" id="phone-number" name="user_phone_number" />
-            <label for="password">Password</label>
-            <input type="password" id="password" name="user_password" />
-            <label for="confirm-password">Confirm Password</label>
-            <input
-              type="password"
-              id="confirm-password"
-              name="user_confirm_password"
-            />
+            <div class="form-row">
+              <div class="form-box">
+                <label for="first-name">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="user_first_name"
+                  required
+                />
+              </div>
+              <div class="form-box">
+                <label for="last-name">Last Name</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="user_last_name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-box">
+                <label for="mail">Email</label>
+                <input type="email" id="mail" name="user_email" required />
+              </div>
+              <div class="form-box">
+                <label for="phone-number">Phone Number</label>
+                <input
+                  type="text"
+                  id="phone-number"
+                  name="user_phone_number"
+                  required
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-box">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="user_password"
+                  required
+                  minlength="8"
+                />
+              </div>
+              <div class="form-box">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="user_confirm_password"
+                  required
+                  minlength="8"
+                />
+              </div>
+            </div>
           </div>
           <div class="account">
-            <button type="submit">Create Account</button>
+            <button class="btn" type="submit">Create Account</button>
             <p>Already have an account? <a href="#">Log In</a></p>
           </div>
         </form>
       </section>
+      <footer class="section footer">
+        <p class="author">Photo by Aleks Dahlberg on Unsplash</p>
+      </footer>
     </div>
   </body>
 </html>
