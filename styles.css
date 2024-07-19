@@ -146,6 +146,26 @@ form {
   font-size: 0.7rem;
 }
 
+.form-row input[type="text"]:focus,
+.form-row input[type="password"]:focus,
+.form-row input[type="email"]:focus {
+  border-color: blue;
+}
+
+.form-row input[type="text"]:valid,
+.form-row input[type="password"]:valid,
+.form-row input[type="email"]:valid {
+  border-color: green;
+}
+
+.form-row input[type="text"]:invalid,
+.form-row input[type="password"]:invalid,
+.form-row input[type="email"]:invalid {
+  border: 1px solid #d55c5f;
+  color: #d55c5f;
+  box-shadow: none;
+}
+
 .form-row input[type="text"],
 .form-row input[type="password"],
 .form-row input[type="email"] {
@@ -155,24 +175,6 @@ form {
   height: 1.6rem;
   width: 75%;
   padding: 0.4rem;
-}
-
-.form-row input[type="text"]:focus,
-.form-row input[type="password"]:focus,
-.form-row input[type="email"]:focus {
-  border: 1px solid blue;
-}
-
-.form-row input[type="text"]:valid,
-.form-row input[type="password"]:valid,
-.form-row input[type="email"]:valid {
-  border: 1px solid green;
-}
-
-.form-row input[type="text"]:invalid,
-.form-row input[type="password"]:invalid,
-.form-row input[type="email"]:invalid {
-  border: 1px solid red;
 }
 
 @media only screen and (max-width: 600px) {
