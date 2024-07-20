@@ -135,6 +135,11 @@ form {
   flex: 1;
 }
 
+.pass {
+  font-size: 0.8rem;
+  color: red;
+}
+
 .form-row label {
   width: 100%;
 
@@ -144,26 +149,6 @@ form {
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   font-size: 0.7rem;
-}
-
-.form-row input[type="text"]:focus,
-.form-row input[type="password"]:focus,
-.form-row input[type="email"]:focus {
-  border-color: blue;
-}
-
-.form-row input[type="text"]:valid,
-.form-row input[type="password"]:valid,
-.form-row input[type="email"]:valid {
-  border-color: green;
-}
-
-.form-row input[type="text"]:invalid,
-.form-row input[type="password"]:invalid,
-.form-row input[type="email"]:invalid {
-  border: 1px solid #d55c5f;
-  color: #d55c5f;
-  box-shadow: none;
 }
 
 .form-row input[type="text"],
@@ -176,6 +161,32 @@ form {
   width: 75%;
   padding: 0.4rem;
 }
+
+.form-row input[type="text"]:focus,
+.form-row input[type="password"]:focus,
+.form-row input[type="email"]:focus {
+  box-shadow: 0px 10px 15px -14px blue;
+}
+
+.form-row input[type="text"]:user-valid,
+.form-row input[type="password"]:user-valid,
+.form-row input[type="email"]:user-valid {
+  border-color: green;
+}
+
+.form-row input[type="text"]:user-invalid,
+.form-row input[type="password"]:user-invalid,
+.form-row input[type="email"]:user-invalid {
+  border: 1px solid #d55c5f;
+  /* color: #d55c5f; */
+  box-shadow: none;
+}
+
+/* .form-row label {
+  &:has(+ input:user-invalid)::after {
+    content: "Passwords must be longer than 8 characters";
+  }
+} */
 
 @media only screen and (max-width: 600px) {
   .sign-up {
